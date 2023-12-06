@@ -38,7 +38,7 @@ async function addOrUpdate(){
     
     location.reload();
 }
-
+ // Codigo para Agregar orden de Servicio
 </script>
 <template>
     <transition name="modal">
@@ -62,10 +62,24 @@ async function addOrUpdate(){
                         </div>
                     </div>
                     <div class="field">
+                        <label class="label">Placa</label>
+                        <div class="control">
+                            <input class="input" type="text" v-model="order.placa" placeholder="Text input">
+                        </div>
+                    </div>
+                    <div class="field">
                         <label class="label">Tipo de Servicio</label>
                         <div class="control">
                             <input class="input" type="text" v-model="order.tiposervicio" placeholder="Text input">
                         </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Valor</label>
+                        <div class="control">
+                            <input class="input" type="text" v-model="order.valor" placeholder="$">
+                            
+                        </div>
+                        
                     </div>
                 </section>
                 <footer class="modal-card-foot">

@@ -8,14 +8,14 @@
                     <div class="field">
                     <label class="label">Name</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="e.g Alex Smith" v-model="name">
+                        <input class="input" type="text" placeholder="tallerhyg" v-model="name">
                     </div>
                     </div>
 
                     <div class="field">
                     <label class="label">Email</label>
                     <div class="control">
-                        <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com" v-model="email">
+                        <input class="input" type="email" placeholder="tallerhyg@gmail.com" v-model="email">
                     </div>
                     </div>
                     <div class="field">

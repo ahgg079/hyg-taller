@@ -9,7 +9,7 @@
                     <div class="field">
                     <label class="label">Email</label>
                     <div class="control">
-                        <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com" v-model="email">
+                        <input class="input" type="email" placeholder="tallerhyg.com" v-model="email">
                     </div>
                     </div>
                     <div class="field">

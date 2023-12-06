@@ -24,6 +24,22 @@
 
       <div class="navbar-end">
         <div class="navbar-item">
+          <template>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                usuario
+              </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item">
+                  DashBoard
+                </a>
+                <a class="navbar-item">
+                 Cerrar sesion
+                </a>
+                
+              </div>
+            </div>
+          </template>
           <div class="buttons">
             <router-link class="button is-primary" to="/register">
               <strong>Registrarse</strong>

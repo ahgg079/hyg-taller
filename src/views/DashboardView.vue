@@ -83,7 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <tr>
             <th><abbr title="Nombre">Nombre</abbr></th>
             <th>Modelo</th>
+            <th>Placa</th>            
             <th><abbr title="Played">Tipo de Servicio</abbr></th>
+            <th><abbr title="Played">Valor</abbr></th>
             <th><abbr title="Played">Actualizar</abbr></th>
             <th><abbr title="Played">Eliminar</abbr></th>
             </tr>
@@ -91,9 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <tbody>
             <tr  v-for="orden in ordenes" :key="orden.id" @click="tooggleComponent(orden, false)">
             <th> {{ orden.nombre }}</th>
-            <td> {{ orden.modelo }}
-            </td>
+            <td> {{ orden.modelo }}</td>
+            <td> {{ orden.placa }}</td>
             <td>{{ orden.tiposervicio }}</td>
+            <td>{{ orden.valor }}</td>
             <td> <button  class="button is-info" @click.stop="tooggleComponent(orden, false)">
             <span>Actualizar</span>
             </button></td>
