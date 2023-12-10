@@ -18,7 +18,9 @@ onMounted(()=>{
 })
 
 const order = ref({
+    fecha :'',
     nombre :'',
+    modelo :'',
     marca : '',
     tiposervicio : ''
 })
@@ -49,6 +51,21 @@ async function addOrUpdate(){
                 <p class="modal-card-title">Agregar Orden</p>
                 </header>
                 <section class="modal-card-body">
+                    <div class="field">
+                        <label class="label">Fecha</label>
+                        <div class="field is-grouped">
+                            <p class="control">
+                                <input class="input" type="text" v-model="day" placeholder="Día" @input="updateDate">
+                            </p>
+                            <p class="control">
+                                <input class="input" type="text" v-model="month" placeholder="Mes" @input="updateDate">
+                            </p>
+                            <p class="control">
+                                <input class="input" type="text" v-model="year" placeholder="Año" @input="updateDate">
+                            </p>  
+                            
+                        </div>
+                    </div>
                     <div class="field">
                         <label class="label">Nombre del Cliente</label>
                         <div class="control">

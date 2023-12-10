@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
         <thead>
             <tr>
+            <th>Fecha</th>
             <th><abbr title="Nombre">Nombre</abbr></th>
             <th>Modelo</th>
             <th>Placa</th>            
@@ -92,7 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
         </thead>
         <tbody>
             <tr  v-for="orden in ordenes" :key="orden.id" @click="tooggleComponent(orden, false)">
-            <th> {{ orden.nombre }}</th>
+            <td> {{ orden.fecha }}</td>
+            <td> {{ orden.nombre }}</td>
             <td> {{ orden.modelo }}</td>
             <td> {{ orden.placa }}</td>
             <td>{{ orden.tiposervicio }}</td>
