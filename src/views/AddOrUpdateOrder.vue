@@ -3,14 +3,17 @@ import  {defineComponent,  ref, onMounted} from 'vue'
 import {firestore } from '../firebase/init'
 import { addDoc, collection, doc, updateDoc } from 'firebase/firestore';
 
+// Propiedades del componente 
 const  props = defineProps({
     data: Object,
     isNew: Boolean
 })
+// Definición del componente
 defineComponent({
     name: 'AddOrUpdateOrder'
 })
 
+// const para cerrar el componente
 const emits = defineEmits(['close'])
 
 onMounted(()=>{
@@ -25,14 +28,17 @@ const order = ref({
     tiposervicio : ''
 })
 
+// Función para agregar o actualizar la orden
 async function addOrUpdate(){
     console.log(props.isNew)
     if(props.isNew){
+         // Agregar una nueva orden a la colección 'ordenes'
         await addDoc(collection(firestore, 'ordenes'), order.value ).then((res) =>{
             emits('close')
         })
     }
     else{
+         // Actualizar una orden existente
         await updateDoc(doc(firestore, 'ordenes', props.data.id), order.value).then((res) =>{
             emits('close')
         })
@@ -53,17 +59,8 @@ async function addOrUpdate(){
                 <section class="modal-card-body">
                     <div class="field">
                         <label class="label">Fecha</label>
-                        <div class="field is-grouped">
-                            <p class="control">
-                                <input class="input" type="text" v-model="day" placeholder="Día" @input="updateDate">
-                            </p>
-                            <p class="control">
-                                <input class="input" type="text" v-model="month" placeholder="Mes" @input="updateDate">
-                            </p>
-                            <p class="control">
-                                <input class="input" type="text" v-model="year" placeholder="Año" @input="updateDate">
-                            </p>  
-                            
+                        <div class="control">
+                            <input type="date" v-model="order.fecha" />
                         </div>
                     </div>
                     <div class="field">
@@ -81,7 +78,7 @@ async function addOrUpdate(){
                     <div class="field">
                         <label class="label">Placa</label>
                         <div class="control">
-                            <input class="input" type="text" v-model="order.placa" placeholder="Text input">
+                            <input class="input" type="text" maxlength="6" v-model="order.placa" placeholder="Text input">
                         </div>
                     </div>
                     <div class="field">
@@ -93,13 +90,14 @@ async function addOrUpdate(){
                     <div class="field">
                         <label class="label">Valor</label>
                         <div class="control">
-                            <input class="input" type="text" v-model="order.valor" placeholder="$">
+                            <input class="input" type="number" v-model="order.valor" placeholder="$">
                             
                         </div>
                         
                     </div>
                 </section>
                 <footer class="modal-card-foot">
+                    <!-- Botones para actualizar o cancelar los cambios -->
                 <button @click="addOrUpdate()"  class="button is-success">{{isNew  ? 'Crear' : 'Actualizar' }}</button>
                 <button @click="emits('close')" class="button">Cancelar</button>
                 </footer>
