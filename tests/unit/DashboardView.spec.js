@@ -7,3 +7,10 @@ test("Prueba de existencia del componente", () => {
     expect(wrapper.exists()).toBe(true);
 });
 
+it ("Boton para adicionar Orden de Servicio", () => {
+    const wrapper = mount(DashboardView);
+
+    expect(wrapper.html()).toContain("Adicionar Orden de Servicio");
+});
+
+  

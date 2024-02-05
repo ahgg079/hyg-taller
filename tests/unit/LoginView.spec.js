@@ -6,3 +6,6 @@ test("Prueba de inicio de sesión", () => {
 
     expect(wrapper.html()).toContain("Iniciar Sesion");
 });
+
+
+
