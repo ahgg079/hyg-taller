@@ -7,5 +7,10 @@ test("Prueba de inicio de sesión", () => {
     expect(wrapper.html()).toContain("Iniciar Sesion");
 });
 
+it ("Prueba de existencia del componente LoginView", () => {
+    const wrapper = mount(LoginView);
+    expect(wrapper.exists()).toBe(true);
+});
+
 
 
