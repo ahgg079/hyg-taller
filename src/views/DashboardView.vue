@@ -31,9 +31,11 @@ function tooggleComponent(docData = {}, isNewDoc = true){
 }
 
 // Función para eliminar un registro de la base de datos
-async function deleteRecord(id){
-  await deleteDoc(doc(firestore, 'ordenes', id))
-  location.reload();
+async function deleteRecord(id) {
+  if (confirm('¿Estás seguro de que deseas eliminar este registro?')) {
+    await deleteDoc(doc(firestore, 'ordenes', id))
+    location.reload();
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {

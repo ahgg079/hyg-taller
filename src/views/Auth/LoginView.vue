@@ -36,6 +36,8 @@
 // Importar dependencias necesarias
 import { auth } from '../../firebase/init'
 import { signInWithEmailAndPassword } from 'firebase/auth';
+
+
 export default {
     data (){
         return {
@@ -53,6 +55,7 @@ export default {
                 signInWithEmailAndPassword(auth, this.email, this.password)
                     .then(user => {
                         console.log(user);
+                        //this.$store.commit('login');
                         this.$router.push({name : 'DashBoardView'})
                     }).catch(err => {
                         // Mostrar mensaje de error

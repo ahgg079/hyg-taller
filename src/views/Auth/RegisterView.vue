@@ -64,7 +64,8 @@ export default {
                         this.email = ''
                         this.password = ''
                         console.log(user)
-                    }).catch(err =>{
+                        this.$router.push({name : 'LoginView'})
+                    }).catch(err => {
                         // Capturar y mostrar mensajes de error
                         this.error = err.message
                     })

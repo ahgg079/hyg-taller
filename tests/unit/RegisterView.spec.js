@@ -15,7 +15,7 @@ it ("Prueba de campos iniciales", () => {
     expect(wrapper.vm.error).toBe('');
 });
 
-it ("Prueba de mensaje de error sin campos obligatorios", async () => {
+it ("Prueba mensaje de error ", async () => {
     const wrapper = mount(RegisterView);
     await wrapper.vm.register();
 
